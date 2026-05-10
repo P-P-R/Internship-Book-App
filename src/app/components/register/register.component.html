@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      
+      <div class="card shadow">
+        <div class="card-body p-5">
+          <h2 class="text-center mb-4">Skapa konto</h2>
+
+          @if (successMessage) {
+            <div class="alert alert-success">{{ successMessage }}</div>
+          }
+          @if (errorMessage) {
+            <div class="alert alert-danger">{{ errorMessage }}</div>
+          }
+
+          <form (ngSubmit)="register()" #registerForm="ngForm">
+            <div class="mb-3">
+              <label for="reg-username" class="form-label fw-bold">Välj ett användarnamn</label>
+              <input type="text" id="reg-username" name="username" class="form-control" [(ngModel)]="user.username" required>
+            </div>
+
+            <div class="mb-4">
+              <label for="reg-password" class="form-label fw-bold">Välj ett lösenord</label>
+              <input type="password" id="reg-password" name="password" class="form-control" [(ngModel)]="user.password" required>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mb-3" [disabled]="!registerForm.form.valid">
+              Skapa konto
+            </button>
+          </form>
+
+          <p class="text-center mt-3 mb-0">
+            Har du redan ett konto? <a routerLink="/login">Logga in här</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

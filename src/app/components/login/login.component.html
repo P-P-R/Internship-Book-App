@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      
+      <div class="card shadow">
+        <div class="card-body p-5">
+          <h2 class="text-center mb-4">Logga in</h2>
+
+          @if (errorMessage) {
+            <div class="alert alert-danger">{{ errorMessage }}</div>
+          }
+
+          <form (ngSubmit)="login()" #loginForm="ngForm">
+            <div class="mb-3">
+              <label for="username" class="form-label fw-bold">Användarnamn</label>
+              <input type="text" id="username" name="username" class="form-control" [(ngModel)]="credentials.username" required>
+            </div>
+
+            <div class="mb-4">
+              <label for="password" class="form-label fw-bold">Lösenord</label>
+              <input type="password" id="password" name="password" class="form-control" [(ngModel)]="credentials.password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mb-3" [disabled]="!loginForm.form.valid">
+              Logga in
+            </button>
+          </form>
+
+          <p class="text-center mt-3 mb-0">
+            Har du inget konto? <a routerLink="/register">Registrera dig här</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
