@@ -12,11 +12,11 @@ export class AuthService {
   // 1. REGISTRERA
   register(user: any): Observable<any> {
 
-    return this.http.post(`${this.apiUrl}/register`, user, { responseType: 'text' });
+    return this.http.post(`${this.apiUrl}/Auth/register`, user, { responseType: 'text' });
   }
 
   login(user: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, user).pipe(
+    return this.http.post(`${this.apiUrl}/Auth/login`, user).pipe(
       tap((response: any) => {
         localStorage.setItem('token', response.token);
       })
