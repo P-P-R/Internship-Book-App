@@ -14,7 +14,7 @@ export interface Quote {
 })
 export class QuoteService {
   // OBS: Porten 7145 stämmer överens med det vi såg i din svarta ruta!
-  private apiUrl = 'https://paulus-bookapi.runasp.net/api';
+  private apiUrl = 'https://paulus-bookapi.runasp.net/api/Quotes';
   constructor(private http: HttpClient) { }
 
   getQuotes(): Observable<Quote[]> {

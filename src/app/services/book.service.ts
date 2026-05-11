@@ -14,7 +14,7 @@ export interface Book {
 })
 export class BookService {
   // OBS: Dubbelkolla att 7145 är rätt port för din Swagger!
-  private apiUrl = 'https://paulus-bookapi.runasp.net/api';
+  private apiUrl = 'https://paulus-bookapi.runasp.net/api/Books';
   constructor(private http: HttpClient) {}
 
   // Hämtar ALLA böcker (används av listan)
