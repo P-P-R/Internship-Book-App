@@ -6,8 +6,7 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:7145/api/Auth';
-
+  private apiUrl = 'http://paulus-bookapi.runasp.net/api';
   constructor(private http: HttpClient) { }
 
   // 1. REGISTRERA
